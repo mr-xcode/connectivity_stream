@@ -19,11 +19,6 @@ class NetworkController extends GetxController {
   }
 
   @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
   void onClose() {
     super.onClose();
     _connectivitySubscription.cancel();
@@ -36,7 +31,7 @@ class NetworkController extends GetxController {
     try {
       _result = await _connectivity.checkConnectivity();
     } catch (e) {
-      print(e.toString());
+      Get.snackbar("Error", "Network Error");
     }
     return _updateConnectionStatus(_result);
   }

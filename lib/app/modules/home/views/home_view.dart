@@ -19,7 +19,7 @@ class HomeView extends GetView<HomeController> {
           child: Obx(
         () => Text(
           _controller.connectionStatus.value.toString(),
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
       )),
     );
